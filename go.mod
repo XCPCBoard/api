@@ -1,4 +1,4 @@
-module github/XCPCBoard/api
+module github.com/XCPCBoard/api
 
 go 1.18
 
