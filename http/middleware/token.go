@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"github.com/XCPCBoard/api/errors"
+	"github.com/XCPCBoard/common/config"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -9,13 +10,10 @@ import (
 	"time"
 )
 
-const (
-	secret = "XCPCBoard2023_C7*1&123" //记得合并后改到config里
-)
-
 func parseToken(token string) (*jwt.StandardClaims, error) {
 	jwtToken, err := jwt.ParseWithClaims(token, &jwt.StandardClaims{}, func(token *jwt.Token) (i interface{}, e error) {
-		return []byte(secret), nil
+		//TokenSecret在config.yml中定义
+		return []byte(config.Conf.TokenSecret), nil
 	})
 	if err == nil && jwtToken != nil {
 		if claim, ok := jwtToken.Claims.(*jwt.StandardClaims); ok && jwtToken.Valid {
@@ -49,10 +47,11 @@ func AuthMiddleware() gin.HandlerFunc {
 			ctx.Error(errors.NewError(http.StatusOK, "token 超时"+err.Error()))
 			ctx.Abort()
 			return
-		} else {
-
 		}
-		ctx.Writer.WriteString(token.Id)
+		//将id和Name写入ctx
+		ctx.Set("xcpc_user_id", token.Id)
+		ctx.Set("xcpc_user_name", token.Audience)
+
 		ctx.Next()
 	}
 }
