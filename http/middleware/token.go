@@ -10,10 +10,15 @@ import (
 	"time"
 )
 
+const (
+	TokenIDStr      = "xcpc_user_id"
+	TokenAccountStr = "xcpc_user_account"
+)
+
 func parseToken(token string) (*jwt.StandardClaims, error) {
 	jwtToken, err := jwt.ParseWithClaims(token, &jwt.StandardClaims{}, func(token *jwt.Token) (i interface{}, e error) {
 		//TokenSecret在config.yml中定义
-		return []byte(config.Conf.TokenSecret), nil
+		return []byte(config.Conf.Secret), nil
 	})
 	if err == nil && jwtToken != nil {
 		if claim, ok := jwtToken.Claims.(*jwt.StandardClaims); ok && jwtToken.Valid {
@@ -49,8 +54,8 @@ func AuthMiddleware() gin.HandlerFunc {
 			return
 		}
 		//将id和Name写入ctx
-		ctx.Set("xcpc_user_id", token.Id)
-		ctx.Set("xcpc_user_name", token.Audience)
+		ctx.Set(TokenIDStr, token.Id)
+		ctx.Set(TokenAccountStr, token.Audience)
 
 		ctx.Next()
 	}

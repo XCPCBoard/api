@@ -7,7 +7,7 @@ import (
 )
 
 func GenerateToken(userName string, userId string) (string, error) {
-	expiresTime := time.Now().Unix() + 86400 //增加一天
+	expiresTime := time.Now().Unix() + 1200
 	claims := jwt.StandardClaims{
 		Audience:  userName,          // 受众(用户名)
 		ExpiresAt: expiresTime,       // 失效时间
@@ -19,7 +19,7 @@ func GenerateToken(userName string, userId string) (string, error) {
 	}
 
 	//TokenSecret在config.yml中定义
-	var jwtSecret = []byte(config.Conf.TokenSecret)
+	var jwtSecret = []byte(config.Conf.Secret)
 	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	token, err := tokenClaims.SignedString(jwtSecret)
 

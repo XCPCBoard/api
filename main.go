@@ -1,13 +1,12 @@
-package api
+package main
 
-import (
-	"github.com/gin-gonic/gin"
-)
+import "fmt"
 
 func main() {
-	route := gin.Default()
-	userApi := route.Group("/user")
-	{
-		userApi.GET("/CreatUser")
-	}
+	var a any
+	a = nil
+	fmt.Println("2")
+	b := fmt.Sprintf("%v", a)
+	fmt.Println(b)
+	fmt.Println("1")
 }
