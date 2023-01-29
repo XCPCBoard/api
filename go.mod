@@ -5,7 +5,7 @@ go 1.18
 require github.com/gin-gonic/gin v1.8.2
 
 require (
-	github.com/XCPCBoard/common v0.0.0-20230125113130-b42ebd3257a2 // indirect
+	github.com/XCPCBoard/common v0.0.0-20230128123402-ad01613d517c // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
@@ -24,7 +24,7 @@ require (
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3 // indirect
-	golang.org/x/exp v0.0.0-20230118134722-a68e582fa157 // indirect
+	golang.org/x/exp v0.0.0-20230127193734-31bee513bff7 // indirect
 	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect
 	golang.org/x/text v0.5.0 // indirect
