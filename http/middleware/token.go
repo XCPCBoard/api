@@ -42,6 +42,7 @@ func AuthMiddleware() gin.HandlerFunc {
 			ctx.Abort()
 			return
 		}
+		//Bearer someString...
 		auth = strings.Fields(auth)[1]
 		// 校验token
 		token, err := parseToken(auth)
