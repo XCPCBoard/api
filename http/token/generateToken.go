@@ -28,11 +28,11 @@ func GenerateToken(userName string, userId string) (string, error) {
 	var jwtSecret = []byte(config.Conf.Secret)
 	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	token, err := tokenClaims.SignedString(jwtSecret)
-	if err != nil {
-		return "", err
-	}
-	token = "Bearer " + token
-	return token, nil
+	//if err != nil {
+	//	return "", err
+	//}
+	//token = "Bearer " + token//不需要
+	return token, err
 }
 
 //GenerateTokenAndSetRedis 生成token并存入redis
