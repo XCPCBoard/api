@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/XCPCBoard/api/errors"
+	"github.com/XCPCBoard/common/errors"
 	"github.com/XCPCBoard/common/logger"
 	"github.com/gin-gonic/gin"
 	"net/http"

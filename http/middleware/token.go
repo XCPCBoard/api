@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"context"
-	"github.com/XCPCBoard/api/errors"
 	"github.com/XCPCBoard/common/config"
 	"github.com/XCPCBoard/common/dao"
+	"github.com/XCPCBoard/common/errors"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"net/http"
