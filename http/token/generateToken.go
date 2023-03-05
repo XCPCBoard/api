@@ -9,9 +9,10 @@ import (
 	"time"
 )
 
-const tokenExpiresTime = 60 * 15
+// 秒数
+const tokenExpiresTime = 60 * 60 * 8
 
-//GenerateToken 生成token
+// GenerateToken 生成token
 func GenerateToken(userName string, userId string) (string, error) {
 	expiresTime := time.Now().Unix() + tokenExpiresTime
 	claims := jwt.StandardClaims{
@@ -35,7 +36,7 @@ func GenerateToken(userName string, userId string) (string, error) {
 	return token, err
 }
 
-//GenerateTokenAndSetRedis 生成token并存入redis
+// GenerateTokenAndSetRedis 生成token并存入redis
 func GenerateTokenAndSetRedis(userName string, userId string) (string, error) {
 	token, err := GenerateToken(userName, userId)
 
