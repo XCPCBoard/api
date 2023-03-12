@@ -8,7 +8,7 @@ import (
 )
 
 func LoggerToFile() gin.HandlerFunc {
-	log := logger.Logger
+	log := logger.L
 	return func(c *gin.Context) {
 		// 开始时间
 		startTime := time.Now()

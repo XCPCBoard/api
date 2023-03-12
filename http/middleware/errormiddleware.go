@@ -21,7 +21,7 @@ func ErrorHandler() gin.HandlerFunc {
 				// 若非自定义错误则返回详细错误信息err.Error()
 				c.AbortWithStatusJSON(http.StatusBadRequest, errors.GetError(errors.INNER_ERROR, err.Error()))
 			}
-			logger.Logger.Warn(err.Error(), 0, "")
+			logger.L.Warn(err.Error(), 0, "")
 		}
 
 		return // 检查最后一个错误就行

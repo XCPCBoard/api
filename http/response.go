@@ -31,14 +31,14 @@ func SuccessResponseAddToken(ctx *gin.Context, data map[string]interface{}) {
 	name, ok2 := ctx.Get(middleware.TokenAccountStr)
 	if !ok || !ok2 {
 		e := errors.CreateError(500, "获取用户token中的id和name失败", ctx.Keys)
-		logger.Logger.Err(e, 0)
+		logger.L.Err(e, 0)
 		ctx.Error(e)
 	}
 	token, err := token.GenerateToken(fmt.Sprintf("%v", id),
 		fmt.Sprintf("%v", name))
 	if err != nil {
 		e := errors.CreateError(500, "生产token失败", err)
-		logger.Logger.Err(e, 0)
+		logger.L.Err(e, 0)
 		ctx.Error(e)
 	}
 	ctx.JSON(http.StatusOK, gin.H{
