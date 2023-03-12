@@ -7,7 +7,6 @@ import (
 	"github.com/XCPCBoard/common/errors"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"net/http"
 	"strings"
 	"time"
 )
@@ -30,15 +29,16 @@ func parseToken(token string) (*jwt.StandardClaims, error) {
 	return nil, err
 }
 
-//AuthMiddleware 认证中间件
+// AuthMiddleware 认证中间件
 func AuthMiddleware() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		//错误
+		code := errors.ERROR.Code
 
 		auth := ctx.Request.Header.Get("Authorization")
 		if len(auth) == 0 {
 
-			ctx.Error(errors.NewError(http.StatusForbidden, "认证失败"))
+			ctx.Error(errors.NewError(code, "认证失败"))
 			ctx.Abort()
 			return
 		}
@@ -47,13 +47,13 @@ func AuthMiddleware() gin.HandlerFunc {
 		// 校验token
 		token, err := parseToken(auth)
 		if err != nil {
-			ctx.Error(errors.NewError(http.StatusOK, "token 错误"+err.Error()))
+			ctx.Error(errors.NewError(code, "token 错误"+err.Error()))
 			ctx.Abort()
 			return
 		}
 		//过期
 		if !token.VerifyExpiresAt(time.Now().Unix(), false) {
-			ctx.Error(errors.NewError(http.StatusOK, "token 超时"+err.Error()))
+			ctx.Error(errors.NewError(code, "token 超时"+err.Error()))
 			ctx.Abort()
 			return
 		}
@@ -65,14 +65,15 @@ func AuthMiddleware() gin.HandlerFunc {
 	}
 }
 
-//AuthMiddlewareWithRedis 认证中间件，加上redis验证
+// AuthMiddlewareWithRedis 认证中间件，加上redis验证
 func AuthMiddlewareWithRedis() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		//错误
+		code := errors.ERROR.Code
 
 		auth := ctx.Request.Header.Get("Authorization")
 		if len(auth) == 0 {
-			ctx.Error(errors.NewError(http.StatusForbidden, "认证失败"))
+			ctx.Error(errors.NewError(code, "认证失败"))
 			ctx.Abort()
 			return
 		}
@@ -80,20 +81,20 @@ func AuthMiddlewareWithRedis() gin.HandlerFunc {
 		// 校验token
 		token, err := parseToken(auth)
 		if err != nil {
-			ctx.Error(errors.NewError(http.StatusOK, "token 错误"+err.Error()))
+			ctx.Error(errors.NewError(code, "token 错误"+err.Error()))
 			ctx.Abort()
 			return
 		}
 		//过期
 		if !token.VerifyExpiresAt(time.Now().Unix(), false) {
-			ctx.Error(errors.NewError(http.StatusOK, "token 超时"+err.Error()))
+			ctx.Error(errors.NewError(code, "token 超时"+err.Error()))
 			ctx.Abort()
 			return
 		}
 
 		userTokenInRedis := dao.RedisClient.Get(context.Background(), token.Id)
 		if now, err := userTokenInRedis.Result(); err != nil || now != token.Id {
-			ctx.Error(errors.NewError(http.StatusInternalServerError, ""))
+			ctx.Error(errors.NewError(code, ""))
 		}
 
 		//将id和Name写入ctx

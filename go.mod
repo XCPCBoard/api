@@ -3,7 +3,7 @@ module github.com/XCPCBoard/api
 go 1.18
 
 require (
-	github.com/XCPCBoard/common v0.0.0-20230305044849-5af9eb5226ab
+	github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.8.2
 )
@@ -37,7 +37,7 @@ require (
 	github.com/tebeka/strftime v0.1.5 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3 // indirect
-	golang.org/x/exp v0.0.0-20230304125523-9ff063c70017 // indirect
+	golang.org/x/exp v0.0.0-20230310171629-522b1b587ee0 // indirect
 	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.5.0 // indirect

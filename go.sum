@@ -2,6 +2,8 @@ github.com/XCPCBoard/common v0.0.0-20230201130658-699f532db09e h1:JlfF1VQeqxsZ3T
 github.com/XCPCBoard/common v0.0.0-20230201130658-699f532db09e/go.mod h1:SAMFZInH0PmBZKcVMEs9QTK8mEG3LBAflk9liVBeP2s=
 github.com/XCPCBoard/common v0.0.0-20230305044849-5af9eb5226ab h1:K5XN6Z9LE3pkL5KoVS3n1UQTH7d6RFB4zY1Gh/tqXs4=
 github.com/XCPCBoard/common v0.0.0-20230305044849-5af9eb5226ab/go.mod h1:SAMFZInH0PmBZKcVMEs9QTK8mEG3LBAflk9liVBeP2s=
+github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d h1:9jcSFaMSaZXO9iVbb9twVaujkrwXV0qGommKkMmf9+U=
+github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d/go.mod h1:FXt8N/rognuw7K9Xls1QT9Ss/8cDods08jLXx1kNuA0=
 github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cbYE=
 github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
@@ -106,6 +108,8 @@ golang.org/x/exp v0.0.0-20230202163644-54bba9f4231b h1:EqBVA+nNsObCwQoBEHy4wLU0p
 golang.org/x/exp v0.0.0-20230202163644-54bba9f4231b/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
 golang.org/x/exp v0.0.0-20230304125523-9ff063c70017 h1:3Ea9SZLCB0aRIhSEjM+iaGIlzzeDJdpi579El/YIhEE=
 golang.org/x/exp v0.0.0-20230304125523-9ff063c70017/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
+golang.org/x/exp v0.0.0-20230310171629-522b1b587ee0 h1:LGJsf5LRplCck6jUCH3dBL2dmycNruWNF5xugkSlfXw=
+golang.org/x/exp v0.0.0-20230310171629-522b1b587ee0/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
 golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
 golang.org/x/net v0.4.0 h1:Q5QPcMlvfxFTAPV0+07Xz/MpK9NTXu2VDUuy0FeMfaU=
 golang.org/x/net v0.4.0/go.mod h1:MBQ8lrhLObU/6UmLb4fmbmk5OcyYmqtbGd/9yIeKjEE=
