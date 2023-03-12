@@ -33,14 +33,15 @@ func LoggerToFile() gin.HandlerFunc {
 
 		// 请求IP
 		clientIP := c.ClientIP()
-
+		log.Partition("[GIN]")
 		//日志格式
-		log.Info("[GIN]", 0, fmt.Sprintf("| stautsCode:%3d | latencyTime:%13v | clientIP:%15s | reqMethod:%s | reqUri:%s |",
-			statusCode,
-			latencyTime,
-			clientIP,
-			reqMethod,
-			reqUri,
-		))
+		log.Info("[GIN]",
+			0, fmt.Sprintf("| stautsCode:%3d | latencyTime:%13v | clientIP:%15s | reqMethod:%s | reqUri:%s |",
+				statusCode,
+				latencyTime,
+				clientIP,
+				reqMethod,
+				reqUri,
+			))
 	}
 }

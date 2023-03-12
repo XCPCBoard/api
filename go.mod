@@ -3,7 +3,7 @@ module github.com/XCPCBoard/api
 go 1.18
 
 require (
-	github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d
+	github.com/XCPCBoard/common v0.0.0-20230312134511-18f8ec7352e8
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.8.2
 )

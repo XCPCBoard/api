@@ -4,6 +4,8 @@ github.com/XCPCBoard/common v0.0.0-20230305044849-5af9eb5226ab h1:K5XN6Z9LE3pkL5
 github.com/XCPCBoard/common v0.0.0-20230305044849-5af9eb5226ab/go.mod h1:SAMFZInH0PmBZKcVMEs9QTK8mEG3LBAflk9liVBeP2s=
 github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d h1:9jcSFaMSaZXO9iVbb9twVaujkrwXV0qGommKkMmf9+U=
 github.com/XCPCBoard/common v0.0.0-20230312094522-d833f87aaf1d/go.mod h1:FXt8N/rognuw7K9Xls1QT9Ss/8cDods08jLXx1kNuA0=
+github.com/XCPCBoard/common v0.0.0-20230312134511-18f8ec7352e8 h1:f9LAo9Nu7oTKcH2xRMTTYk3YYl530Oe77I7qeeOlJNo=
+github.com/XCPCBoard/common v0.0.0-20230312134511-18f8ec7352e8/go.mod h1:FXt8N/rognuw7K9Xls1QT9Ss/8cDods08jLXx1kNuA0=
 github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cbYE=
 github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
