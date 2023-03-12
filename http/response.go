@@ -34,8 +34,7 @@ func SuccessResponseAddToken(ctx *gin.Context, data map[string]interface{}) {
 		logger.L.Err(e, 0)
 		ctx.Error(e)
 	}
-	token, err := token.GenerateToken(fmt.Sprintf("%v", id),
-		fmt.Sprintf("%v", name))
+	token, err := token.GenerateToken(fmt.Sprintf("%v", name), fmt.Sprintf("%v", id))
 	if err != nil {
 		e := errors.CreateError(MsgCode["unKnow"], "生产token失败", err)
 		logger.L.Err(e, 0)
